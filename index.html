@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Laramie Truck and Tire — 24/7 Mobile Truck &amp; Tire Repair, Laramie WY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="24-hour mobile truck, trailer, and tire repair in Laramie, Wyoming. ASE certified, locally owned. We come to you — up to 100 miles from Laramie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14181D;
+    --panel:#1E252D;
+    --body-text:#454B52;
+    --orange:#D9531E;
+    --orange-deep:#B74315;
+    --steel:#3E5A73;
+    --paper:#F1F0EC;
+    --paper-dim:#E7E5DC;
+    --line:#D5D2C7;
+    --white:#FFFFFF;
+    --cream:#F6F4EC;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15181C;
+      --paper-dim:#1C2025;
+      --body-text:#D8D5CB;
+      --line:#333A41;
+      --white:#1C2025;
+      --cream:#1C2025;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15181C;
+    --paper-dim:#1C2025;
+    --body-text:#D8D5CB;
+    --line:#333A41;
+    --white:#1C2025;
+    --cream:#1C2025;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--body-text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Big Shoulders Display',sans-serif;
+    color:var(--ink);
+    margin:0;
+    line-height:1.02;
+    letter-spacing:0.2px;
+    font-weight:700;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) h1,
+    :root:not([data-theme="light"]) h2,
+    :root:not([data-theme="light"]) h3,
+    :root:not([data-theme="light"]) .display{ color:#F2F0E7; }
+  }
+  :root[data-theme="dark"] h1,
+  :root[data-theme="dark"] h2,
+  :root[data-theme="dark"] h3,
+  :root[data-theme="dark"] .display{ color:#F2F0E7; }
+
+  a{color:inherit;}
+  img,svg{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  section{padding:88px 0;}
+  @media (max-width:720px){ section{padding:56px 0;} }
+
+  /* ---------- Logo mark (shared) ---------- */
+  .tire-mark circle.tm-ring{fill:none; stroke:currentColor; stroke-width:9;}
+  .tire-mark circle.tm-hub{fill:currentColor;}
+  .tire-mark circle.tm-lug{fill:var(--orange);}
+  .tire-mark rect.tm-tick{fill:currentColor;}
+  .tire-mark circle.tm-cap{fill:var(--orange);}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1120px; margin:0 auto; padding:12px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand{display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink);}
+  .brand svg{width:38px; height:38px; flex:none;}
+  .brand-name{
+    font-family:'Big Shoulders Display'; font-weight:700; font-size:19px; color:var(--ink);
+    line-height:1; letter-spacing:0.3px;
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .brand-name{color:#F2F0E7;} }
+  :root[data-theme="dark"] .brand-name{color:#F2F0E7;}
+  .brand-name span{display:block; font-family:'Inter'; font-weight:500; font-size:11px; color:var(--body-text); letter-spacing:0.4px; margin-top:2px;}
+
+  nav{display:flex; align-items:center; gap:28px;}
+  nav a{
+    text-decoration:none; font-size:14.5px; font-weight:500; color:var(--body-text);
+    border-bottom:2px solid transparent; padding-bottom:2px;
+  }
+  nav a:hover, nav a:focus-visible{ border-bottom-color:var(--orange); color:var(--ink); }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) nav a:hover{color:#F2F0E7;} }
+  :root[data-theme="dark"] nav a:hover{color:#F2F0E7;}
+
+  .header-call{display:flex; align-items:center; gap:16px;}
+  .call-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--ink); color:var(--white);
+    font-family:'Big Shoulders Display'; font-weight:700; font-size:15.5px;
+    padding:10px 18px; border-radius:3px; text-decoration:none;
+    white-space:nowrap;
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .call-btn{color:var(--paper);} }
+  :root[data-theme="dark"] .call-btn{color:var(--paper);}
+  .call-btn:hover, .call-btn:focus-visible{ background:var(--orange); color:#fff; }
+  .call-btn svg{width:16px; height:16px; flex:none;}
+
+  .navtoggle{display:none; background:none; border:none; padding:6px; cursor:pointer; color:var(--ink);}
+  .navtoggle svg{width:24px; height:24px;}
+  @media (max-width:860px){
+    nav{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--paper); border-bottom:1px solid var(--line);
+      flex-direction:column; align-items:flex-start; gap:0;
+      padding:8px 24px 16px; display:none;
+    }
+    nav.open{display:flex;}
+    nav a{width:100%; padding:10px 0; border-bottom:1px solid var(--line);}
+    .navtoggle{display:block;}
+    .brand-name{font-size:16px;}
+    .brand svg{width:32px; height:32px;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--ink);
+    padding:64px 0 0;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--orange); font-family:'Big Shoulders Display'; font-weight:700; font-size:15px;
+    letter-spacing:0.4px; margin-bottom:18px;
+  }
+  .eyebrow .dot{width:8px; height:8px; border-radius:50%; background:var(--orange); animation:pulse 1.8s ease-in-out infinite;}
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:0.35;} }
+  @media (prefers-reduced-motion: reduce){ .eyebrow .dot{animation:none;} }
+
+  .hero h1{
+    color:#F5F3EA; font-size:clamp(34px,4.8vw,56px); font-weight:700;
+  }
+  .hero h1 em{ color:var(--orange); font-style:normal; }
+  .hero p.lede{
+    color:#B9B6A9; font-size:18px; max-width:46ch; margin:20px 0 30px; font-family:'Inter';
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:'Big Shoulders Display'; font-weight:700; font-size:17px;
+    padding:15px 26px; border-radius:3px; text-decoration:none;
+    display:inline-flex; align-items:center; gap:10px;
+  }
+  .btn-primary{background:var(--orange); color:#fff;}
+  .btn-primary:hover, .btn-primary:focus-visible{background:#fff; color:var(--ink);}
+  .btn-ghost{background:transparent; color:#F5F3EA; border:1.5px solid #454C54;}
+  .btn-ghost:hover, .btn-ghost:focus-visible{border-color:var(--orange); color:var(--orange);}
+  .btn svg{width:18px; height:18px;}
+
+  .hero-figure{
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    padding:30px 10px;
+  }
+  .hero-figure .tire-big{
+    width:min(360px,86%);
+    height:auto;
+    color:#F5F3EA;
+  }
+  .hero-figure .badge{
+    position:absolute; top:14%; right:6%;
+    background:var(--orange); color:#fff;
+    font-family:'Big Shoulders Display'; font-weight:700; font-size:14px;
+    padding:8px 14px; border-radius:3px; text-align:center; line-height:1.2;
+    transform:rotate(4deg);
+  }
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr; padding-bottom:0;}
+    .hero-figure{margin-top:0;}
+  }
+
+  /* ---------- Trust bar ---------- */
+  .trustbar{
+    background:var(--paper-dim);
+    border-bottom:1px solid var(--line);
+  }
+  .trustbar .wrap{
+    padding:22px 24px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
+  }
+  .trust-item{display:flex; align-items:center; gap:12px;}
+  .trust-item svg{width:26px; height:26px; flex:none; color:var(--orange);}
+  .trust-item .t{font-family:'Big Shoulders Display'; font-weight:700; font-size:15.5px; color:var(--ink); line-height:1.15;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .trust-item .t{color:#F2F0E7;} }
+  :root[data-theme="dark"] .trust-item .t{color:#F2F0E7;}
+  .trust-item .s{font-size:12.5px; color:var(--body-text);}
+  @media (max-width:860px){ .trustbar .wrap{grid-template-columns:repeat(2,1fr);} }
+
+  /* ---------- Section headings ---------- */
+  .sec-head{max-width:640px; margin-bottom:44px;}
+  .sec-head .kicker{
+    font-family:'Big Shoulders Display'; font-weight:700; color:var(--orange-deep); font-size:15px; margin-bottom:8px; display:block;
+  }
+  .sec-head h2{font-size:clamp(28px,3.6vw,42px); font-weight:700;}
+  .sec-head p{font-size:16.5px; margin-top:14px; max-width:56ch; font-family:'Inter';}
+
+  /* ---------- Why us ---------- */
+  .why-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    border-top:1px solid var(--line);
+  }
+  .why-item{
+    padding:30px 26px 30px 0;
+    border-right:1px solid var(--line);
+  }
+  .why-item:last-child{border-right:none;}
+  .why-item .mark{
+    font-family:'Big Shoulders Display'; font-weight:700; font-size:13.5px; color:var(--orange-deep);
+    margin-bottom:14px; display:block;
+  }
+  .why-item h3{font-size:21px; font-weight:700; margin-bottom:10px;}
+  .why-item p{font-size:15px; margin:0; font-family:'Inter';}
+  @media (max-width:820px){
+    .why-grid{grid-template-columns:1fr;}
+    .why-item{border-right:none; border-bottom:1px solid var(--line); padding:26px 0;}
+  }
+
+  /* ---------- Emergency banner ---------- */
+  .banner{
+    background:var(--orange); color:#fff;
+    padding:34px 0;
+  }
+  .banner .wrap{
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .banner h3{color:#fff; font-size:23px; font-weight:700;}
+  .banner p{margin:4px 0 0; color:#FBE0D3; font-size:14.5px; font-family:'Inter';}
+  .banner .call-btn{background:#fff; color:var(--orange-deep);}
+  .banner .call-btn:hover{background:var(--ink); color:#fff;}
+
+  /* ---------- Services ---------- */
+  .services-wrap{
+    display:grid; grid-template-columns:1fr 1fr; gap:8px 40px;
+  }
+  .svc{
+    display:flex; align-items:baseline; gap:12px;
+    padding:13px 0; border-bottom:1px solid var(--line);
+    font-size:16px; color:var(--ink); font-family:'Inter';
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .svc{color:#F2F0E7;} }
+  :root[data-theme="dark"] .svc{color:#F2F0E7;}
+  .svc svg{width:15px; height:15px; flex:none; color:var(--orange-deep);}
+  .svc.tire-row{font-weight:600;}
+  @media (max-width:720px){ .services-wrap{grid-template-columns:1fr;} }
+
+  /* ---------- Coverage ---------- */
+  .coverage{ background:var(--paper-dim); }
+  .coverage .wrap{
+    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
+  }
+  .radius-graphic{
+    aspect-ratio:1/1; max-width:360px; margin:0 auto;
+    position:relative; border-radius:50%;
+    background:
+      repeating-radial-gradient(circle at center, transparent 0, transparent 52px, var(--line) 53px, transparent 54px);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .radius-graphic::before{
+    content:""; position:absolute; inset:0; border-radius:50%;
+    border:1px dashed #B9B4A2;
+  }
+  .radius-center{
+    background:var(--ink); color:#fff;
+    width:88px; height:88px; border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-family:'Big Shoulders Display'; font-weight:700; text-align:center; font-size:12px; z-index:2;
+    box-shadow:0 0 0 6px var(--paper-dim);
+  }
+  .radius-graphic .r-label{
+    position:absolute; font-family:'Big Shoulders Display'; font-size:12px; font-weight:700; color:var(--body-text);
+    background:var(--paper-dim); padding:0 6px;
+  }
+  .r-label.r1{top:calc(50% - 53px); left:50%; transform:translate(-50%,-50%);}
+  .r-label.r2{top:calc(50% - 106px); left:50%; transform:translate(-50%,-50%);}
+  .r-label.r3{top:calc(50% - 159px); left:50%; transform:translate(-50%,-50%);}
+  @media (max-width:900px){ .coverage .wrap{grid-template-columns:1fr; text-align:center;} .radius-graphic{margin-top:12px;} }
+
+  .coverage-list{list-style:none; margin:22px 0 0; padding:0; text-align:left; display:inline-block;}
+  .coverage-list li{display:flex; gap:10px; align-items:flex-start; margin-bottom:12px; font-size:15.5px; font-family:'Inter';}
+  .coverage-list svg{width:17px; height:17px; margin-top:3px; flex:none; color:var(--orange-deep);}
+
+  /* ---------- About ---------- */
+  .about .wrap{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .about-copy p{margin:0 0 16px; font-size:16px; font-family:'Inter';}
+  .about-badges{display:flex; gap:14px; margin-top:22px; flex-wrap:wrap;}
+  .badge{
+    display:flex; align-items:center; gap:10px;
+    border:1px solid var(--line); border-radius:4px; padding:10px 14px;
+    font-family:'Big Shoulders Display'; font-weight:700; font-size:14px;
+  }
+  .badge svg{width:20px; height:20px; color:var(--orange-deep);}
+  .about-visual{
+    background:var(--paper-dim); border:1px solid var(--line); border-radius:6px;
+    display:flex; align-items:center; justify-content:center; padding:50px 20px;
+  }
+  .about-visual svg{width:min(280px,80%); height:auto; color:var(--ink);}
+  @media (max-width:860px){ .about .wrap{grid-template-columns:1fr;} .about-visual{order:-1;} }
+
+  /* ---------- Contact / Footer ---------- */
+  .contact{ background:var(--ink); }
+  .contact .sec-head h2{color:#F5F3EA;}
+  .contact .sec-head .kicker{color:var(--orange);}
+  .contact-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:52px;}
+  .contact-panel{
+    background:var(--panel); border-radius:4px; padding:34px;
+  }
+  .contact-panel .big-call{
+    display:flex; align-items:center; gap:14px;
+    font-family:'Big Shoulders Display'; font-weight:700; font-size:clamp(26px,3.6vw,36px);
+    color:var(--orange); text-decoration:none; margin-bottom:6px;
+  }
+  .contact-panel .big-call svg{width:30px; height:30px;}
+  .contact-panel .sub{color:#A6A296; font-size:14.5px; margin-bottom:26px; font-family:'Inter';}
+  .contact-row{display:flex; gap:14px; padding:14px 0; border-top:1px solid #333A41; align-items:flex-start;}
+  .contact-row:first-of-type{border-top:none;}
+  .contact-row svg{width:19px; height:19px; flex:none; color:var(--orange); margin-top:2px;}
+  .contact-row .l{color:#7D796C; font-size:12.5px; font-family:'Big Shoulders Display'; font-weight:700; letter-spacing:0.3px;}
+  .contact-row .v{color:#F0EEE3; font-size:15.5px; font-family:'Inter';}
+  .map-frame{border-radius:4px; overflow:hidden; border:1px solid #333A41; min-height:280px;}
+  .map-frame iframe{width:100%; height:100%; min-height:280px; border:0; display:block; filter:grayscale(0.2);}
+  @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+
+  footer{
+    background:var(--ink); border-top:1px solid #2A3038; padding:26px 0 100px;
+  }
+  .footer-inner{
+    max-width:1120px; margin:0 auto; padding:0 24px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+  }
+  .footer-inner .fbrand{display:flex; align-items:center; gap:10px; color:#F5F3EA;}
+  .footer-inner .fbrand svg{width:26px; height:26px;}
+  .footer-inner .fbrand span{font-family:'Inter'; color:#A6A296; font-size:13px;}
+  .footer-links{display:flex; gap:22px; flex-wrap:wrap;}
+  .footer-links a{color:#A6A296; font-size:13.5px; text-decoration:none; font-family:'Inter';}
+  .footer-links a:hover{color:var(--orange);}
+  @media (max-width:720px){ footer{padding-bottom:110px;} }
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .mobile-call{
+    display:none;
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:var(--orange);
+    padding:12px 18px calc(12px + env(safe-area-inset-bottom));
+    align-items:center; justify-content:center; gap:10px;
+    font-family:'Big Shoulders Display'; font-weight:700; font-size:17px; color:#fff;
+    text-decoration:none;
+    box-shadow:0 -4px 14px rgba(0,0,0,0.22);
+  }
+  .mobile-call svg{width:19px; height:19px;}
+  @media (max-width:720px){ .mobile-call{display:flex;} }
+
+  :focus-visible{ outline:2px solid var(--orange-deep); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#home" class="brand">
+      <svg class="tire-mark" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="tm-ring" cx="60" cy="60" r="52"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(0 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(30 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(60 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(90 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(120 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(150 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(180 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(210 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(240 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(270 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(300 60 60)"/>
+        <rect class="tm-tick" x="57" y="4" width="6" height="15" rx="2" transform="rotate(330 60 60)"/>
+        <circle class="tm-hub" cx="60" cy="60" r="34"/>
+        <circle class="tm-lug" cx="60.0" cy="40.0" r="3.4"/>
+        <circle class="tm-lug" cx="79.0" cy="53.8" r="3.4"/>
+        <circle class="tm-lug" cx="71.8" cy="76.2" r="3.4"/>
+        <circle class="tm-lug" cx="48.2" cy="76.2" r="3.4"/>
+        <circle class="tm-lug" cx="41.0" cy="53.8" r="3.4"/>
+      </svg>
+      <span class="brand-name">Laramie Truck &amp; Tire<span>Mobile Repair · Laramie, WY</span></span>
+    </a>
+    <button class="navtoggle" aria-label="Toggle menu" aria-expanded="false" id="navBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#coverage">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-call">
+      <a href="tel:+13077604061" class="call-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (307) 760-4061
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:64px;">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Open 24 hours — 7 days a week</span>
+        <h1>Broke down or blew a tire out here? <em>We come to you.</em></h1>
+        <p class="lede">Laramie Truck &amp; Tire sends ASE-certified mobile technicians straight to your rig — truck, trailer, or tire trouble — anywhere within 100 miles of Laramie, day or night.</p>
+        <div class="hero-ctas">
+          <a href="tel:+13077604061" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now — (307) 760-4061
+          </a>
+          <a href="#services" class="btn btn-ghost">See our services</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <span class="badge">24/7<br>Road Service</span>
+        <svg class="tire-big" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="88" fill="none" stroke="currentColor" stroke-width="15"/>
+          <g fill="currentColor">
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(0 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(24 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(48 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(72 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(96 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(120 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(144 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(168 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(192 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(216 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(240 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(264 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(288 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(312 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(336 100 100)"/>
+          </g>
+          <circle cx="100" cy="100" r="56" fill="currentColor"/>
+          <circle cx="100.0" cy="61.0" r="6" fill="#D9531E"/>
+          <circle cx="135.2" cy="82.5" r="6" fill="#D9531E"/>
+          <circle cx="121.8" cy="123.8" r="6" fill="#D9531E"/>
+          <circle cx="78.2" cy="123.8" r="6" fill="#D9531E"/>
+          <circle cx="64.8" cy="82.5" r="6" fill="#D9531E"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trustbar">
+    <div class="wrap">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><div class="t">24/7/365</div><div class="s">Nights, weekends, holidays</div></div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div><div class="t">ASE Certified</div><div class="s">Dealer-grade diagnostics</div></div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>
+        <div><div class="t">Locally Owned</div><div class="s">Based in Laramie, WY</div></div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5-5 1.4-1.4L9 17.2l9.6-9.6L20 9z"/></svg>
+        <div><div class="t">We Come to You</div><div class="s">On-site, roadside repair</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY US -->
+  <section class="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Why call Laramie Truck &amp; Tire</span>
+        <h2>Fast help from people who treat you right</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="mark">Professional</span>
+          <h3>Experienced, equipped techs</h3>
+          <p>Our mobile units carry dealer-grade diagnostic computers and a full tire kit, so we can find the actual problem fast — on trucks, trailers, RVs, and buses.</p>
+        </div>
+        <div class="why-item">
+          <span class="mark">Always on</span>
+          <h3>Around-the-clock service</h3>
+          <p>Breakdowns don't wait for business hours, so neither do we. We make the repair on-site and save you the cost and delay of a tow.</p>
+        </div>
+        <div class="why-item">
+          <span class="mark">Local</span>
+          <h3>Your neighbors, not a call center</h3>
+          <p>We're a locally owned Laramie shop. You'll be treated with respect on a stressful roadside call — that's the whole reason we're in this business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY BANNER -->
+  <div class="banner">
+    <div class="wrap">
+      <div>
+        <h3>Stranded right now?</h3>
+        <p>Skip the scrolling — a technician is on call around the clock.</p>
+      </div>
+      <a href="tel:+13077604061" class="call-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (307) 760-4061
+      </a>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">What we fix</span>
+        <h2>Full-service truck, trailer &amp; tire repair</h2>
+        <p>From a roadside flat to scheduled fleet maintenance — one call covers all of it.</p>
+      </div>
+      <div class="services-wrap">
+        <div class="svc tire-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Roadside tire changes &amp; repair</div>
+        <div class="svc tire-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>New, used &amp; retread tires</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Truck &amp; trailer repair</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>24-hour emergency roadside</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Computer diagnostics</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Vehicle inspections — truck &amp; trailer</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Onsite fleet services &amp; PM plans</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Radiator &amp; cooling systems</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Quick-lube &amp; preventative maintenance</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Light &amp; medium duty repair</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Mobile fueling</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Liftgates &amp; hydraulics</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Reefer trailers</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Hydraulic hose repair</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Engine &amp; electrical</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Air systems</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Bus repairs</div>
+        <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Minor automotive</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE / SERVICE AREA -->
+  <section id="coverage" class="coverage">
+    <div class="wrap">
+      <div>
+        <div class="sec-head" style="margin-bottom:0;">
+          <span class="kicker">Service area</span>
+          <h2>Based in Laramie. Ready within 100 miles.</h2>
+          <p>Our mobile units are stocked and dispatched from Laramie, Wyoming, covering the surrounding region for both scheduled and emergency calls.</p>
+        </div>
+        <ul class="coverage-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Laramie &amp; surrounding Wyoming communities</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Up to a 100-mile dispatch radius</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Interstate breakdowns &amp; roadside calls</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Commercial fleets, RVs &amp; buses</li>
+        </ul>
+      </div>
+      <div class="radius-graphic">
+        <span class="r-label r1">25 mi</span>
+        <span class="r-label r2">60 mi</span>
+        <span class="r-label r3">100 mi</span>
+        <div class="radius-center">LARAMIE<br>WY</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="wrap">
+      <div>
+        <div class="sec-head" style="margin-bottom:22px;">
+          <span class="kicker">About us</span>
+          <h2>Straightforward repair, from people who show up</h2>
+        </div>
+        <div class="about-copy">
+          <p>Laramie Truck &amp; Tire provides professional heavy-duty mobile repair and tire service for commercial trucks, trailers, RVs, and buses throughout the Laramie, Wyoming area.</p>
+          <p>Diesel technology keeps changing, and our technicians keep up with it — arriving with dealer-grade diagnostic equipment to identify the real issue the first time, not just the symptom.</p>
+          <p>Roadside breakdowns are stressful. Our job is to get you back on the road quickly, while treating you like a neighbor, not a ticket number.</p>
+        </div>
+        <div class="about-badges">
+          <div class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+            ASE Certified Technicians
+          </div>
+          <div class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            24-Hour Availability
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="88" fill="none" stroke="currentColor" stroke-width="15"/>
+          <g fill="currentColor">
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(0 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(24 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(48 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(72 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(96 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(120 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(144 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(168 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(192 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(216 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(240 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(264 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(288 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(312 100 100)"/>
+            <rect x="94" y="4" width="12" height="26" rx="3" transform="rotate(336 100 100)"/>
+          </g>
+          <circle cx="100" cy="100" r="56" fill="currentColor"/>
+          <circle cx="100.0" cy="61.0" r="6" fill="#D9531E"/>
+          <circle cx="135.2" cy="82.5" r="6" fill="#D9531E"/>
+          <circle cx="121.8" cy="123.8" r="6" fill="#D9531E"/>
+          <circle cx="78.2" cy="123.8" r="6" fill="#D9531E"/>
+          <circle cx="64.8" cy="82.5" r="6" fill="#D9531E"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Get help now</span>
+      <h2>Call anytime, or find us in Laramie</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-panel">
+        <a href="tel:+13077604061" class="big-call">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (307) 760-4061
+        </a>
+        <div class="sub">Tap to call — a technician is available 24 hours a day, 7 days a week.</div>
+
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="l">LOCATION</div><div class="v">Laramie, Wyoming</div></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div><div class="l">HOURS</div><div class="v">Open 24 hours, every day</div></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5-5 1.4-1.4L9 17.2l9.6-9.6L20 9z"/></svg>
+          <div><div class="l">SERVICE AREA</div><div class="v">100-mile radius of Laramie</div></div>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Laramie,+Wyoming&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Laramie, Wyoming service area"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="fbrand">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle fill="none" stroke="currentColor" stroke-width="9" cx="60" cy="60" r="52"/>
+        <rect fill="currentColor" x="57" y="4" width="6" height="15" rx="2" transform="rotate(0 60 60)"/>
+        <rect fill="currentColor" x="57" y="4" width="6" height="15" rx="2" transform="rotate(60 60 60)"/>
+        <rect fill="currentColor" x="57" y="4" width="6" height="15" rx="2" transform="rotate(120 60 60)"/>
+        <rect fill="currentColor" x="57" y="4" width="6" height="15" rx="2" transform="rotate(180 60 60)"/>
+        <rect fill="currentColor" x="57" y="4" width="6" height="15" rx="2" transform="rotate(240 60 60)"/>
+        <rect fill="currentColor" x="57" y="4" width="6" height="15" rx="2" transform="rotate(300 60 60)"/>
+        <circle fill="currentColor" cx="60" cy="60" r="34"/>
+        <circle fill="#D9531E" cx="60" cy="60" r="8"/>
+      </svg>
+      <span>© 2026 Laramie Truck &amp; Tire · Laramie, WY</span>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#coverage">Service Area</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+13077604061">(307) 760-4061</a>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+13077604061" class="mobile-call">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Call Now — (307) 760-4061
+</a>
+
+<script>
+  var toggleBtn = document.getElementById('navBtn');
+  var nav = document.getElementById('nav');
+  toggleBtn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); toggleBtn.setAttribute('aria-expanded','false'); });
+  });
+</script>
+
+</body>
+</html>
